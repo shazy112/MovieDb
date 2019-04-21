@@ -11,33 +11,17 @@ import Foundation
 extension String {
     
     /**
-     It converts a string to Date object
-     
-     The input parameter should be in the yyyy-MM-dd format.
-     
-     - parameter date: represents the string to convert.
-     
-     -returns: An object of type Date.
+     It converts a string type Date to desired App format.
+    
+     -returns: the converted string date.
      */
     
-    func toDate(date: String) -> Date? {
+    func convertToAppFormat()->String? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return dateFormatter.date(from: self)
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
+        guard let dated = dateFormatter.date(from:self) else {return ""}
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        return dateFormatter.string(from: dated)
     }
-    
-    /**
-     This property returns a date in short format
-     
-     -returns: A string in MMM yyyy format.
-     */
-    
-    var shortDate: String? {
-        guard let date = toDate(date: self) else {
-            return nil
-        }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM yyyy"
-        return dateFormatter.string(from: date)
-    }
+
 }

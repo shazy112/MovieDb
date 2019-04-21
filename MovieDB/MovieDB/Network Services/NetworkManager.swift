@@ -14,10 +14,35 @@ class NetworkManager {
     class func getPopularMovies(_page:Int,completion:@escaping (APIResult<PopularMovies>)->Void){
         MovieService.service.request(.popularMovies(page:_page)) { result in
             do{
-                let timeline:PopularMovies = try result.decoded()
-                if timeline.totalPages != nil && _page <= timeline.totalPages ?? 0{
-                    completion(.success(timeline))}
+                let movies:PopularMovies = try result.decoded()
+                if movies.totalPages != nil && _page <= movies.totalPages ?? 0{
+                    completion(.success(movies))}
             }
+            catch{
+                completion(.failure(error.customDescription))
+            }
+            
+        }
+    }
+    
+    
+    class func getMovieById(_id:Int,completion:@escaping (APIResult<[Movie]>)->Void){
+        MovieService.service.request(.getMovieById(id: _id)) { result in
+            do{
+                let movie:[Movie] = try result.decoded(keypath: "results")
+                    completion(.success(movie))}
+            catch{
+                completion(.failure(error.customDescription))
+            }
+            
+        }
+    }
+    
+    class func getGenres(completion:@escaping (APIResult<[Genre]>)->Void){
+        MovieService.service.request(.getGenres()) { result in
+            do{
+                let genres:[Genre] = try result.decoded(keypath: "genres")
+                completion(.success(genres))}
             catch{
                 completion(.failure(error.customDescription))
             }

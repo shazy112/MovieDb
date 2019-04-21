@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDB/Network Services/NetworkManager.swift"
-            timestampString = "577475627.035583"
+            timestampString = "577555567.795688"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "getPopularMovies(_page:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDB/Network Services/Extension+Result.swift"
-            timestampString = "577475495.760663"
+            timestampString = "577483825.401859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDB/Network Services/Extension+Result.swift"
-            timestampString = "577475495.760933"
+            timestampString = "577483825.402144"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDB/Network Services/Extension+Result.swift"
-            timestampString = "577475495.761006"
+            timestampString = "577483825.402215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -74,13 +74,157 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDB/Network Services/NetworkManager.swift"
-            timestampString = "577475627.036888"
+            timestampString = "577555567.795978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "getPopularMovies(_page:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieDB/Controllers/PopularMovieDetailViewController.swift"
+            timestampString = "577555567.796078"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "getMovie(id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieDB/Network Services/NetworkManager.swift"
+            timestampString = "577555567.796175"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getMovieById(_id:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieDB/Network Services/NetworkManager.swift"
+            timestampString = "577555567.796253"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getMovieById(_id:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in static MovieDB.NetworkManager.getMovieById(_id: Swift.Int, completion: (MovieDB.APIResult&lt;Swift.Array&lt;MovieDB.Movie&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/invision/MovieDb/MovieDB/MovieDB/Network%20Services/NetworkManager.swift"
+                  timestampString = "577542652.136528"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "363">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in static MovieDB.NetworkManager.getMovieById(_id: Swift.Int, completion: (MovieDB.APIResult&lt;Swift.Array&lt;MovieDB.Movie&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/invision/MovieDb/MovieDB/MovieDB/Network%20Services/NetworkManager.swift"
+                  timestampString = "577542652.139796"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "421">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieDB/Network Services/NetworkManager.swift"
+            timestampString = "577555567.796331"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getMovieById(_id:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieDB/Network Services/NetworkManager.swift"
+            timestampString = "577555567.7964081"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getGenres(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in static MovieDB.NetworkManager.getGenres(completion: (MovieDB.APIResult&lt;Swift.Array&lt;MovieDB.Genre&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/invision/MovieDb/MovieDB/MovieDB/Network%20Services/NetworkManager.swift"
+                  timestampString = "577554004.409731"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "363">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in static MovieDB.NetworkManager.getGenres(completion: (MovieDB.APIResult&lt;Swift.Array&lt;MovieDB.Genre&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/invision/MovieDb/MovieDB/MovieDB/Network%20Services/NetworkManager.swift"
+                  timestampString = "577554004.43291"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "421">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

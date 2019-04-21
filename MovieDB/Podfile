@@ -6,10 +6,10 @@ target 'MovieDB' do
   use_frameworks!
 
   # Pods for MovieDB
-	pod 'SwiftyJSON'
     pod 'Moya'
     pod 'SDWebImage'
-
+    pod 'IQKeyboardManager'
+    pod 'XCDYouTubeKit'
   target 'MovieDBTests' do
     inherit! :search_paths
     # Pods for testing

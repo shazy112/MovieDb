@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - IQKeyboardManager (6.2.1)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
   - Moya/Core (12.0.1):
@@ -9,28 +10,31 @@ PODS:
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
-  - SwiftyJSON (4.2.0)
+  - XCDYouTubeKit (2.7.3)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - Moya
   - SDWebImage
-  - SwiftyJSON
+  - XCDYouTubeKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - IQKeyboardManager
     - Moya
     - Result
     - SDWebImage
-    - SwiftyJSON
+    - XCDYouTubeKit
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  IQKeyboardManager: 964638372b4a61892cc74fdfa6fd26de8c9464a2
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  XCDYouTubeKit: 3f4fd3eb3ed494a46a8f007b91315eed6dd6df1f
 
-PODFILE CHECKSUM: 096d32a7452a8427b77a4e0545d963002a7ba8ba
+PODFILE CHECKSUM: 20396a528cfeb28d153c4968ec8fd9f9a97c5188
 
 COCOAPODS: 1.6.1

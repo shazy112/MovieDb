@@ -11,7 +11,8 @@ import Moya
 
 enum MovieService {
     case popularMovies(page:Int)
-    case searchMovies(query: String, page: Int)
+    case getMovieById(id:Int)
+    case getGenres()
 }
 
 extension MovieService: TargetType {
@@ -22,14 +23,17 @@ extension MovieService: TargetType {
         switch self {
         case .popularMovies:
             return "/movie/popular"
-        case .searchMovies:
-            return "/search/movie"
+        case .getMovieById(let id):
+            return "/movie/\(id)/videos"
+        case .getGenres:
+            return "/genre/movie/list"
+        
         }
     }
         
     var method: Moya.Method {
         switch self {
-        case .searchMovies, .popularMovies:
+        case .getMovieById, .popularMovies,.getGenres:
             return .get
         }
     }
@@ -38,8 +42,8 @@ extension MovieService: TargetType {
         switch self {
         case .popularMovies(let page):
             return .requestParameters(parameters: ["page": page], encoding: URLEncoding.queryString)
-        case let .searchMovies(query, page):
-            return .requestParameters(parameters: ["query": query, "page": page], encoding: URLEncoding.queryString)
+        case .getMovieById(_),.getGenres():
+            return .requestPlain
         }
     }
  
