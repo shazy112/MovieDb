@@ -12,16 +12,16 @@ extension String {
     
     /**
      It converts a string type Date to desired App format.
-    
+     
      -returns: the converted string date.
      */
     
-    func convertToAppFormat()->String? {
+    func toString()->String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat =  "yyyy-MM-dd"
-        guard let dated = dateFormatter.date(from:self) else {return ""}
+        guard let dated = dateFormatter.date(from:self) else {return nil}
         dateFormatter.dateFormat = "dd.MM.yyyy"
         return dateFormatter.string(from: dated)
     }
-
+    
 }

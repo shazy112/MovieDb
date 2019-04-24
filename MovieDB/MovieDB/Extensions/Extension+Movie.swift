@@ -7,7 +7,7 @@
 //
 
 import Foundation
-extension PopularMoviesResult{
+extension MoviesResult{
     
     
     /**
@@ -18,5 +18,5 @@ extension PopularMoviesResult{
         guard let poster = posterPath else {return nil}
         return URL(string: "\(APIConfiguration.imagesBaseURL)\(poster)")
     }
-    
 }
+

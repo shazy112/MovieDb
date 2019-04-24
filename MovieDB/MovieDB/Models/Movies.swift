@@ -7,9 +7,9 @@
 //
 import Foundation
 
-struct PopularMovies: Codable {
+struct Movies: Codable {
     let page, totalResults, totalPages: Int?
-    let results: [PopularMoviesResult]
+    let results: [MoviesResult]
     
     enum CodingKeys: String, CodingKey {
         case page
@@ -19,7 +19,7 @@ struct PopularMovies: Codable {
     }
 }
 
-struct PopularMoviesResult: Codable {
+struct MoviesResult: Codable {
     let voteCount, id: Int
     let video: Bool
     let voteAverage: Double

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+// Struct that holds all the variables related to api.
 struct APIConfiguration{
     static let apiKey = "bec3fd859f36402c62bda0fb7346ca5b"
     static let baseURL = "http://api.themoviedb.org/3?api_key=\(apiKey)"

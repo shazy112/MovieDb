@@ -10,12 +10,30 @@ import XCTest
 @testable import MovieDB
 
 class MovieDBTests: XCTestCase {
-
+    var promise = XCTestExpectation()
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
+    func testAPIsuccess() {
+        apiTest()
+    }
+    
+    func apiTest(){
+        NetworkManager.getPopularMovies(_page: 1) {[weak self] (result) in
+            switch result{
+            case .success(let popularMovies):
+                if !popularMovies.results.isEmpty{
+                    self?.promise.fulfill()
+                }
+            case .failure(let error):
+                XCTFail(error)
+            }
+        }
+    }
+    
     override func tearDown() {
+        
+        super.tearDown()
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
@@ -27,7 +45,7 @@ class MovieDBTests: XCTestCase {
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+            apiTest()
         }
     }
 

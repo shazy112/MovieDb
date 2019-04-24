@@ -8,17 +8,15 @@
 
 import UIKit
 
-class PopularMoviesTableViewCell: UITableViewCell {
+class MoviesTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var movieImageView: UIImageView!
-    @IBOutlet weak var movieLabel: UILabel!
-    var movies:PopularMoviesResult?{
+    @IBOutlet weak private var movieImageView: UIImageView!
+    @IBOutlet weak private var movieLabel: UILabel!
+    //Seting up data
+    var movies:MoviesResult!{
         didSet{
-            guard let _movies = movies else {return}
-            movieLabel.text = _movies.title
-            if let _poster = movies?.moviePoster{
-                movieImageView.setImage(url: _poster)
-            }
+            movieLabel.text = movies.title
+            movieImageView.setImage(url: movies?.moviePoster)
         }
     }
 }

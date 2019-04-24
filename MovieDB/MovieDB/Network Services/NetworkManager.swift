@@ -9,14 +9,17 @@ import Result
 import Foundation
 
 import Foundation
+
+//Contains all the api calls
 class NetworkManager {
-    
-    class func getPopularMovies(_page:Int,completion:@escaping (APIResult<PopularMovies>)->Void){
+    //Here Decoded returns either the model or if it fails it returs error.
+    class func getPopularMovies(_page:Int,completion:@escaping (APIResult<Movies>)->Void){
         MovieService.service.request(.popularMovies(page:_page)) { result in
             do{
-                let movies:PopularMovies = try result.decoded()
-                if movies.totalPages != nil && _page <= movies.totalPages ?? 0{
-                    completion(.success(movies))}
+                let movies:Movies = try result.decoded()
+                if let pages = movies.totalPages, _page <= pages{
+                    completion(.success(movies))
+                }
             }
             catch{
                 completion(.failure(error.customDescription))
@@ -26,11 +29,11 @@ class NetworkManager {
     }
     
     
-    class func getMovieById(_id:Int,completion:@escaping (APIResult<[Movie]>)->Void){
+    class func getMovieById(_id:Int,completion:@escaping (APIResult<[Specifications]>)->Void){
         MovieService.service.request(.getMovieById(id: _id)) { result in
             do{
-                let movie:[Movie] = try result.decoded(keypath: "results")
-                    completion(.success(movie))}
+                let movie:[Specifications] = try result.decoded(keypath: "results")
+                completion(.success(movie))}
             catch{
                 completion(.failure(error.customDescription))
             }

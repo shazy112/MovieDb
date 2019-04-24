@@ -6,7 +6,7 @@
 //  Copyright © 2019 Invision. All rights reserved.
 //
 
-struct Movie: Codable {
+struct Specifications: Codable {
     let id, iso639_1, iso3166_1, key: String
     let name, site: String
     let size: Int

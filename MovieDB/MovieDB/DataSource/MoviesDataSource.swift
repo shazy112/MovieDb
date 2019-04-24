@@ -8,18 +8,22 @@
 
 import Foundation
 import UIKit
+/**
+ Tableview Data source that sets up the required method need to populate any tableview
+ 
+ */
 
-class PopularMoviesDataSource:NSObject,UITableViewDataSource{
-    lazy var popularMovies:[PopularMoviesResult] = []
+class MoviesDataSource:NSObject,UITableViewDataSource{
+    var movies:[MoviesResult] = []
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! PopularMoviesTableViewCell
-        cell.movies = popularMovies[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MoviesTableViewCell
+        cell.movies = movies[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return popularMovies.count
+        return movies.count
     }
     
     

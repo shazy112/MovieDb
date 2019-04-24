@@ -27,17 +27,17 @@ extension MovieService: TargetType {
             return "/movie/\(id)/videos"
         case .getGenres:
             return "/genre/movie/list"
-        
+            
         }
     }
-        
+    
     var method: Moya.Method {
         switch self {
         case .getMovieById, .popularMovies,.getGenres:
             return .get
         }
     }
-        
+    
     var task: Task {
         switch self {
         case .popularMovies(let page):
@@ -46,7 +46,7 @@ extension MovieService: TargetType {
             return .requestPlain
         }
     }
- 
+    
     var headers: [String: String]? {
         return ["Content-type": "application/json"]
     }

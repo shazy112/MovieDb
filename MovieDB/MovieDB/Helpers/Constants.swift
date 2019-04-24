@@ -7,6 +7,10 @@
 //
 
 import Foundation
+
 struct SegueIdentifier {
+    /**
+     Should have all the segues identifiers.
+     */
     static let movieDetail = "goToDetail"
 }

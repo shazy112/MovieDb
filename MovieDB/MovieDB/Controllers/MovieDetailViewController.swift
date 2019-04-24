@@ -7,25 +7,28 @@
 //
 
 import UIKit
-import XCDYouTubeKit
-import AVKit
-class PopularMovieDetailViewController: UIViewController {
+
+class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak private var overviewLabel: UILabel!
     @IBOutlet weak private var dateLabel: UILabel!
     @IBOutlet weak private var genresLabel: UILabel!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var imageView: UIImageView!
-    private lazy var movie : [Movie] = []
+    
+    private lazy var specs : [Specifications] = []
     private lazy var genres :[Genre] = []
-    var popularMovie:PopularMoviesResult?
+    var movie:MoviesResult!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Movie Detail"
         getGenres()
-        getMovie(id: popularMovie?.id ?? 0)
+        getMovieSpecs(id: movie?.id ?? 0)
     }
     
     private func getGenres(){
+        //Call to get genres
         NetworkManager.getGenres {[unowned self] (result) in
             switch result{
             case .success(let myGenres):
@@ -36,31 +39,31 @@ class PopularMovieDetailViewController: UIViewController {
         }
     }
     
-    private func getMovie(id:Int){
-        NetworkManager.getMovieById(_id: id) {[unowned self] (result) in
+    private func getMovieSpecs(id:Int){
+        //Getting movies specs from id received from the previous controller
+        NetworkManager.getMovieById(_id: id) {[weak self] (result) in
             switch result{
-            case .success(let myMovie):
-                self.movie = myMovie
-                self.setData()
+            case .success(let _specs):
+                self?.specs = _specs
+                self?.setData()
             case .failure(let message):
-                self.showAlert(message: message)
+                self?.showAlert(message: message)
             }
         }
     }
     
     private func setData(){
-        dateLabel.text = popularMovie?.releaseDate.convertToAppFormat()
-        genresLabel.text = SetGenres.value(genres: genres, selectedMovieGenres: popularMovie?.genreids)
-        overviewLabel.text = popularMovie?.overview
-        titleLabel.text = popularMovie?.title
-        if let _poster = popularMovie?.moviePoster{
-            imageView.setImage(url: _poster)
-        }
+        dateLabel.text = movie?.releaseDate.toString()
+        genresLabel.text = Genre.setValue(genres: genres, selectedMovieGenres: movie?.genreids ?? [])
+        overviewLabel.text = movie?.overview
+        titleLabel.text = movie?.title
+        imageView.setImage(url: movie?.moviePoster)
     }
     
     @IBAction func watchTrailerTapped(_ sender: Any) {
-        if let key = movie.first?.key {
-            YoutubeVideoPlayer.playVideoWith(identifier: key, vc: self)}
+        if let key = specs.first?.key {
+            YoutubeVideoPlayer.playVideoWith(identifier: key, vc: self)
+        }
     }
     
 }

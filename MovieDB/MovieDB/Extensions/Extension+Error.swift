@@ -10,6 +10,9 @@
 //
 import Foundation
 import Moya
+/**
+ Extension of Moya error class that gets the error and returns string from response that is contained in a message key.
+ */
 extension Error{
     var customDescription:String{
         get{

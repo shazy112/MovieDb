@@ -11,6 +11,7 @@ import Moya
 import Result
 
 extension Result {
+    //Extension of An enum from Moya representing either a failure with an explanatory error, or a success with a result value.
     func resolve() throws -> Value {
         switch self {
         case .success(let value):
@@ -22,10 +23,11 @@ extension Result {
 }
 
 extension Result where Value == Moya.Response {
+    //Decodes data from json with keypath
     func decoded<T: Decodable>(keypath:String? = nil) throws -> T {
         let decoder = JSONDecoder()
         let response = try resolve()
-        return try response.map(T.self, atKeyPath: keypath, using: decoder)//decoder.decode(T.self, from: response.data)
+        return try response.map(T.self, atKeyPath: keypath, using: decoder)
     }
 }
 
